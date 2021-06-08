@@ -2,17 +2,15 @@ const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const TsconfigPathsPlugin = require("tsconfig-paths-webpack-plugin");
 
-const mode = process.env.NODE_ENV === "prod" ? "production" : "development";
-
 module.exports = {
-  mode,
   entry: path.resolve(__dirname, "src/index.tsx"),
-  output: {
-    filename: "bundle.js",
-    path: path.resolve(__dirname, "build"),
-  },
   module: {
     rules: [
+      {
+        test: /\.html$/,
+        use: "html-loader",
+        exclude: [path.resolve(__dirname, "node-modules")],
+      },
       {
         test: /\.(js|ts)x?$/i,
         use: ["babel-loader", "ts-loader"],
@@ -27,6 +25,9 @@ module.exports = {
         test: /\.(?:ico|gif|png|jpg|jpeg|webp)$/i,
         type: "asset/resource",
         include: [path.resolve(__dirname, "src/assets")],
+        generator: {
+          filename: "assets/[name].[contenthash].[ext]",
+        },
       },
       {
         test: /\.(woff(2)?|eot|tff|otf|svg)$/,
@@ -37,8 +38,8 @@ module.exports = {
   },
   resolve: {
     alias: {
-      "~": path.resolve(__dirname),
-      src: path.resolve(__dirname, "src"),
+      "~": path.resolve(__dirname, "src"),
+      // src: path.resolve(__dirname, "src"),
     },
     plugins: [new TsconfigPathsPlugin()],
     extensions: [".tsx", ".ts", ".jsx", ".js"],
@@ -49,6 +50,4 @@ module.exports = {
       template: "./public/index.html",
     }),
   ],
-
-  devtool: "eval-source-map",
 };
