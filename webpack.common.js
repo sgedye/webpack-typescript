@@ -3,7 +3,10 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 const TsconfigPathsPlugin = require("tsconfig-paths-webpack-plugin");
 
 module.exports = {
-  entry: path.resolve(__dirname, "src/index.tsx"),
+  entry: {
+    main: path.resolve(__dirname, "src/index.tsx"),
+    vendor: path.resolve(__dirname, "src/vendor.ts"),
+  },
   module: {
     rules: [
       {

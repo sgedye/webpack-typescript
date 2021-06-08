@@ -12,6 +12,7 @@
     "format": "prettier --write \"./src/**/*.{js,jsx,ts,tsx,json,css,scss,md}\""
   },
   "dependencies": {
+    "bootstrap": "^5.0.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2"
   },
@@ -22,6 +23,7 @@
     "@babel/preset-react": "^7.13.13",
     "@babel/preset-typescript": "^7.13.0",
     "@babel/runtime": "^7.14.0",
+    "@types/bootstrap": "^5.0.15",
     "@types/react": "^17.0.9",
     "@types/react-dom": "^17.0.6",
     "@types/webpack": "^5.28.0",
