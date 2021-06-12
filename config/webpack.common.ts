@@ -1,33 +1,34 @@
-const path = require("path");
+import * as path from "path";
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const TsconfigPathsPlugin = require("tsconfig-paths-webpack-plugin");
 
+/** @type {import("webpack").Configuration} */
 module.exports = {
   entry: {
-    main: path.resolve(__dirname, "src/index.tsx"),
-    vendor: path.resolve(__dirname, "src/vendor.ts"),
+    main: path.resolve(__dirname, "../src/index.tsx"),
+    vendor: path.resolve(__dirname, "../src/vendor.ts"),
   },
   module: {
     rules: [
       {
         test: /\.html$/,
         use: "html-loader",
-        exclude: [path.resolve(__dirname, "node-modules")],
+        exclude: /node_modules/i,
       },
       {
         test: /\.(js|ts)x?$/i,
         use: ["babel-loader", "ts-loader"],
-        include: [path.resolve(__dirname, "src")],
+        include: [path.resolve(__dirname, "../src")],
       },
       {
         test: /\.s?css$/i,
         use: ["style-loader", "css-loader", "sass-loader"],
-        include: [path.resolve(__dirname, "src/assets")],
+        include: [path.resolve(__dirname, "../src/assets")],
       },
       {
         test: /\.(?:ico|gif|png|jpg|jpeg|webp)$/i,
         type: "asset/resource",
-        include: [path.resolve(__dirname, "src/assets")],
+        include: [path.resolve(__dirname, "../src/assets")],
         generator: {
           filename: "assets/[name].[contenthash].[ext]",
         },
@@ -35,22 +36,20 @@ module.exports = {
       {
         test: /\.(woff(2)?|eot|tff|otf|svg)$/,
         type: "asset/inline",
-        include: [path.resolve(__dirname, "src/assets")],
+        include: [path.resolve(__dirname, "../src/assets")],
       },
     ],
   },
   resolve: {
     alias: {
-      "~": path.resolve(__dirname, "src"),
-      // src: path.resolve(__dirname, "src"),
+      "~": path.resolve(__dirname, "../src"),
     },
     plugins: [new TsconfigPathsPlugin()],
     extensions: [".tsx", ".ts", ".jsx", ".js"],
   },
-
   plugins: [
     new HtmlWebpackPlugin({
-      template: "./public/index.html",
+      template: "/public/index.html",
     }),
   ],
 };
