@@ -23,11 +23,6 @@ module.exports = {
         include: [path.resolve(__dirname, "../src")],
       },
       {
-        test: /\.s?css$/i,
-        use: ["style-loader", "css-loader", "sass-loader"],
-        include: [path.resolve(__dirname, "../src/assets")],
-      },
-      {
         test: /\.(?:ico|gif|png|jpg|jpeg|webp)$/i,
         type: "asset/resource",
         include: [path.resolve(__dirname, "../src/assets")],

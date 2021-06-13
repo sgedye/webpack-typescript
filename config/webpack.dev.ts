@@ -21,4 +21,13 @@ module.exports = merge(common, {
     hot: true,
   },
   plugins: [new HotModuleReplacementPlugin(), new ReactRefreshWebpackPlugin()],
+  module: {
+    rules: [
+      {
+        test: /\.s?css$/i,
+        use: ["style-loader", "css-loader", "sass-loader"],
+        include: [path.resolve(__dirname, "../src/assets")],
+      },
+    ],
+  },
 });
