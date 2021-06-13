@@ -1,8 +1,19 @@
 # webpack-typescript
 
-### This is a React-Typescript project boilerplate using Webpack 5, Babel 7 and Typescript.
+**View the [live version](https://webpack-ts-react-boilerplate.netlify.app/) hosted on netlify.**
 
-### Scripts:
+>This project is intended to be used as a boilerplate project.  It uses Webpack 5, Babel 7, React 17 and Typescript 4.
+
+## Purpose:
+
+The purpose of this project was to increase my familiarity with webpack 5, while at the same time creating a production ready project skeleton.
+This project uses:
+- Code splitting in the production build to reduce package size
+- Content hashes, to update required files as new versions are pushed out
+- Hot reloading in the development setting (which maintaining state)
+- Different coloured favicons to easily distinguish developer and production environments
+
+## Scripts:
 
 - "yarn start": - open the developer server in a new tab.
 - "yarn build": - creates a production build in /build (to run this, change into the /build foler (cd build) and run "npx serve")
