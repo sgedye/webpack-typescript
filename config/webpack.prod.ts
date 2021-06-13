@@ -11,6 +11,7 @@ module.exports = merge(common, {
   output: {
     filename: "[name].[contenthash].bundle.min.js",
     path: path.resolve(__dirname, "../build"),
+    publicPath: "/",
     // assetModuleFilename: "assets/[name].[contenthash][ext]",
   },
   plugins: [new CleanWebpackPlugin()],

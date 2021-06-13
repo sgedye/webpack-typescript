@@ -5,8 +5,10 @@ const TsconfigPathsPlugin = require("tsconfig-paths-webpack-plugin");
 /** @type {import("webpack").Configuration} */
 module.exports = {
   entry: {
-    main: path.resolve(__dirname, "../src/index.tsx"),
-    vendor: path.resolve(__dirname, "../src/vendor.ts"),
+    main: [
+      path.resolve(__dirname, "../src/index.tsx"),
+      path.resolve(__dirname, "../src/vendor.tsx"),
+    ],
   },
   module: {
     rules: [
