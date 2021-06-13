@@ -4,6 +4,12 @@
 
 >This project is intended to be used as a boilerplate project.  It uses Webpack 5, Babel 7, React 17 and Typescript 4.
 
+
+| ![alttext](/public/fav_dev.png) | ![alttext](/public/fav_prod.png) |
+| :-------------: |:-------------:|
+| Dev Favicon | Prod Favicon |
+
+
 ## Purpose:
 
 The purpose of this project was to increase my familiarity with webpack 5, while at the same time creating a production ready project skeleton.
