@@ -1,7 +1,9 @@
 import * as path from "path";
 const common = require("./webpack.common");
 const { merge } = require("webpack-merge");
+
 import { HotModuleReplacementPlugin } from "webpack";
+const HtmlWebpackPlugin = require("html-webpack-plugin");
 const ReactRefreshWebpackPlugin = require("@pmmmwh/react-refresh-webpack-plugin");
 
 /** @type {import("webpack").Configuration} */
@@ -20,7 +22,14 @@ module.exports = merge(common, {
     open: "chrome",
     hot: true,
   },
-  plugins: [new HotModuleReplacementPlugin(), new ReactRefreshWebpackPlugin()],
+  plugins: [
+    new HotModuleReplacementPlugin(),
+    new ReactRefreshWebpackPlugin(),
+    new HtmlWebpackPlugin({
+      template: "/public/index.html",
+      favicon: path.resolve(__dirname, "../public/favicon_dev.ico"),
+    }),
+  ],
   module: {
     rules: [
       {

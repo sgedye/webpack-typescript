@@ -2,6 +2,7 @@ import * as path from "path";
 const common = require("./webpack.common");
 const { merge } = require("webpack-merge");
 
+const HtmlWebpackPlugin = require("html-webpack-plugin");
 const TerserPlugin = require("terser-webpack-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
@@ -15,7 +16,14 @@ module.exports = merge(common, {
     publicPath: "/",
     // assetModuleFilename: "assets/[name].[contenthash][ext]",
   },
-  plugins: [new CleanWebpackPlugin(), new MiniCssExtractPlugin()],
+  plugins: [
+    new CleanWebpackPlugin(),
+    new MiniCssExtractPlugin(),
+    new HtmlWebpackPlugin({
+      template: "/public/index.html",
+      favicon: path.resolve(__dirname, "../public/favicon_prod.ico"),
+    }),
+  ],
   module: {
     rules: [
       {
