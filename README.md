@@ -7,11 +7,12 @@
 ## Purpose:
 
 The purpose of this project was to increase my familiarity with webpack 5, while at the same time creating a production ready project skeleton.
-This project uses:
+Some features of this project are:
 - Code splitting in the production build to reduce package size
 - Content hashes, to update required files as new versions are pushed out
 - Hot reloading in the development setting (which maintaining state)
 - Different coloured favicons to easily distinguish developer and production environments
+- Already setup with bootstrap 5 and custom scss variables
 
 ## Scripts:
 
