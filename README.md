@@ -10,7 +10,7 @@
 
 - Webpack 5 + Hot reloading in the development setting (while maintaining state)
 - React 17, Typescript 4, Babel 7, EsLint
-- Already setup with Bootstrap 5, scss & custom scss variables, and images
+- Already setup with Bootstrap 5, styled-components and scss
 - Code splitting in the production build to reduce package size
 - Content hashes, to update required files as new versions are pushed out
 - Different coloured favicons to easily distinguish developer and production environments

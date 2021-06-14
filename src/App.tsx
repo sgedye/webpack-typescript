@@ -3,7 +3,7 @@ import { Header, Footer } from "./ui";
 
 export const App: React.FC<Record<string, never>> = () => {
   return (
-    <div className="app d-flex flex-column">
+    <div className="app position-relative d-flex flex-column">
       <Header />
       <main className="container">
         <Images />
