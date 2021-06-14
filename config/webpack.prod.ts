@@ -12,7 +12,7 @@ module.exports = merge(common, {
   mode: "development",
   output: {
     filename: "[name].[contenthash].bundle.min.js",
-    path: path.resolve(__dirname, "../build"),
+    path: path.resolve(__dirname, "../dist"),
     publicPath: "/",
     // assetModuleFilename: "assets/[name].[contenthash][ext]",
   },

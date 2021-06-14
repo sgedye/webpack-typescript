@@ -11,14 +11,14 @@ module.exports = merge(common, {
   mode: "development",
   output: {
     filename: "[name].bundle.js",
-    path: path.resolve(__dirname, "../build"),
+    path: path.resolve(__dirname, "../dist"),
     publicPath: "/",
   },
   devtool: "eval-source-map",
   devServer: {
     host: "localhost",
     port: 9000,
-    contentBase: path.resolve(__dirname, "/build"),
+    contentBase: path.resolve(__dirname, "../dist"),
     open: "chrome",
     hot: true,
   },
